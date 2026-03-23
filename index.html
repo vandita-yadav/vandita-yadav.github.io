@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vandita Yadav Portfolio</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header class="navbar">
+
+            <div class="logo">
+                VY
+            </div>
+
+            <nav class="nav-links">
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Blog</a>
+                <a href="#">Experience</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </header>
+
+        <section class="homepage">
+
+            <div class="homepage-left">
+
+                <p class="availability">
+                    <span class="dot"></span>
+                    Available for opportunities
+                </p>
+
+                <h1>
+                    Hi, I'm Vandita <br>
+                    <span class="role">
+                        Software Developer & AI Enthusiast
+                    </span>
+                </h1>
+
+                <p>
+                    Aspiring Software Developer focused on Data Science, Artificial Intelligence, and backend engineering, 
+                    building practical systems that solve real problems through clean logic and thoughtful design.
+                </p>
+
+                <div class="homepage-buttons">
+                    <a href="#contact" target="_blank"><button>Get In Touch</button></a>
+                    <a href="assets/cv/Vandita_Yadav_General_CV.pdf" download><button>Download CV</button></a>
+                </div>
+
+            </div>
+
+            <div class="homepage-right">
+                <div id="model-container"></div>
+            </div>
+
+        </section>
+
+        <section id="contact" class="contact">
+
+            <div class="contact-container">
+
+                <!-- LEFT SIDE -->
+
+                <div class="contact-left">
+
+                    <h2>Let's Connect</h2>
+
+                    <p>
+                        Have a project in mind, a collaboration idea, or just want to say hello?
+                        Feel free to reach out — I'm always excited to connect, build, and explore new opportunities.
+                    </p>
+
+                    <div class="contact-info">
+
+                        <div class="info-item">
+                            <img src="assets/icons/gmail.svg">
+                            <span>vandita22yadav@gmail.com</span>
+                        </div>
+
+                        <div class="info-item">
+                            <img src="assets/icons/linkedin.svg">
+                            <a href="https://www.linkedin.com/in/vandita-yadav/" target="_blank">
+                                LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="info-item">
+                            <img src="assets/icons/github.svg">
+                            <a href="https://github.com/vandita-yadav" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <img src="assets/icons/map-pin.svg" alt="Location"> 
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Location: </span>
+                                <span>Prayagraj, Uttar Pradesh, India</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <img src="assets/icons/clock.svg" alt="Time">
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Response Time: </span>
+                                <span>Within 24 hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+                <div class="contact-right">
+                    <form class="contact-form" action="https://formspree.io/f/xdawqogr" method="POST">
+                        
+                        <div class="input-group half-width">
+                            <label>First Name <span>*</span></label>
+                            <input type="text" name="First Name" placeholder="First Name" required>
+                        </div>
+
+                        <div class="input-group half-width">
+                            <label>Last Name <span>*</span></label>
+                            <input type="text" name="Last Name" placeholder="Last Name" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Email <span>*</span></label>
+                            <input type="email" name="email" placeholder="email@example.com" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Subject <span>*</span></label>
+                            <select name="Subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="Project Inquiry">Project Inquiry</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Message <span>*</span></label>
+                            <textarea name="Message" placeholder="Tell me about your project or how I can help you..." required></textarea>
+                            <p class="form-tip">💡 Tip: Write a meaningful message with at least 3 words and 10 characters. Avoid random characters or excessive repetition.</p>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        <p id="form-status" style="display: none; text-align: center; width: 100%; margin-top: 15px; font-weight: 600;"></p>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
