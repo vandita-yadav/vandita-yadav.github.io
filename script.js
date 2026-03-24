@@ -1,6 +1,6 @@
 let model;
 let baseY = 0;
-
+let targetRotationY = 0; // <-- Add this new line
 const container = document.getElementById("model-container");
 
 const scene = new THREE.Scene();
@@ -53,7 +53,6 @@ const controls = new THREE.OrbitControls(
 controls.enableDamping = true;
 controls.enableZoom = false;
 
-
 // LOADER
 const loader = new THREE.GLTFLoader();
 
@@ -63,7 +62,7 @@ loader.load(
 
         model = gltf.scene;
 
-        model.scale.set(1.5, 1.5, 1.5);
+        model.scale.set(1.8, 1.8, 1.8);
 
         // center model
         const box = new THREE.Box3().setFromObject(model);
@@ -73,6 +72,21 @@ loader.load(
 
         baseY = -0.6;
         model.position.y = baseY;
+
+        // --- SMOOTH ROTATION LOGIC ---
+        // 1. Get the previous rotation count
+        let prevRotationCount = parseInt(localStorage.getItem("laptopRotations")) || 0;
+        let currentRotationCount = prevRotationCount + 1;
+        
+        // 2. Save the new count for next time
+        localStorage.setItem("laptopRotations", currentRotationCount);
+
+        // 3. Start the laptop at the previous angle
+        model.rotation.y = prevRotationCount * (Math.PI / 1.8);
+        
+        // 4. Set the target to the new angle (60 degrees further)
+        targetRotationY = currentRotationCount * (Math.PI / 1.8);
+        // -----------------------------
 
         scene.add(model);
     }
@@ -86,22 +100,179 @@ function animate() {
 
     if (model) {
 
-        model.position.y =
-            baseY + Math.sin(Date.now() * 0.0012) * 0.35;
+        model.position.y = baseY + Math.sin(Date.now() * 0.0012) * 0.35;
+        model.rotation.y += (targetRotationY - model.rotation.y) * 0.033;
 
     }
 
     controls.update();
-
     renderer.render(scene, camera);
 }
 
 animate();
 
+// --- SCROLL ANIMATION LOGIC ---
+
+// 1. Create the lookout (Intersection Observer)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // If the element is visible on the screen...
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-drop');
+        }
+    });
+});
+
+// 2. Tell the lookout to watch ALL section titles, not just the first one
+const titlesToAnimate = document.querySelectorAll('.section-title');
+
+titlesToAnimate.forEach((title) => {
+    observer.observe(title);
+});
+
+
+// --- PROJECT MODAL LOGIC ---
+const modalOverlay = document.getElementById('project-modal');
+const closeModalBtn = document.querySelector('.close-modal-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+// 1. Our Project "Database"
+const projectData = {
+    'card-netflix': {
+        title: "Netflix & TV Shows Content Analyser",
+        subtitle: "An interactive Streamlit-powered recommender system for 32,000+ movies and TV shows.",
+        desc: "This project is a content-based recommender that achieves 85% relevance using genre and language insights. It utilizes cosine similarity on combined features (genre, cast, director, description) to generate smart recommendations. Performance is highly optimized by accelerating memory handling with Joblib, reducing the 7.6 GB matrix load times by 40%.",
+        tech: ["Python", "Pandas", "Scikit-learn", "Streamlit", "Joblib"],
+        features: [
+            "Content-based recommendations showing 5 similar titles.",
+            "Filtering for Top 20 titles globally by language or genre.",
+            "Interactive Streamlit dashboard with modular functions.",
+            "Advanced data preprocessing and text normalization."
+        ],
+        workflow: [
+            "Vectorized text using CountVectorizer.",
+            "Calculated cosine similarity for content matching.",
+            "Saved the massive 7.6 GB similarity matrix locally via Joblib.",
+            "Handled missing source data without breaking the UI."
+        ],
+        links: `<a href="https://github.com/vandita-yadav/Netflix-TV-Shows-Content-Explorer" class="btn-github" target="_blank">GitHub ↗</a>`
+    },
+    'card-metro': {
+        title: "Metro Lens | Operations Intelligence",
+        subtitle: "A scalable Power BI analytics dashboard for metro ridership data.",
+        desc: "Modeled 65,700+ metro records into a robust star-schema to enable scalable analytics. This intelligence dashboard quantifies ridership and congestion patterns, successfully identifying 3-4x times station load variations and revealing a 40% peak-hour dominance.",
+        tech: ["Power BI", "Power Query", "DAX"],
+        features: [
+            "Interactive visualizations of ridership trends.",
+            "Identification of high-density stations and peak intervals.",
+            "Scalable analytics handling 65,700+ records.",
+            "Actionable insights into congestion patterns."
+        ],
+        workflow: [
+            "Data modeling into a star-schema.",
+            "Created 12 custom DAX measures for deep analytics.",
+            "Data transformation using Power Query.",
+            "Dashboard design and deployment."
+        ],
+        links: `
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ5ZGI4YTYtZGMwOC00MzA4LWI5NjAtZmI3YzlmZTQ0NmY1IiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D&pageName=d5fb8dec6735a7466c53" class="btn-live" target="_blank">Live Dashboard ↗</a>
+        `
+    },
+    'card-fraud': {
+        title: "Credit Card Fraud Prediction",
+        subtitle: "Real-time machine learning fraud detection dashboard.",
+        desc: "Developed a decision tree-based fraud detection model achieving 92% accuracy while reducing false positives by 12%. The model is deployed via a Streamlit dashboard that provides real-time predictions, processing over 280,000 records and cutting evaluation time by 60%.",
+        tech: ["Python", "Pandas", "Scikit-learn", "Streamlit"],
+        features: [
+            "Real-time fraud prediction processing.",
+            "High-accuracy (92%) decision tree model.",
+            "Significant 12% reduction in false positive rates.",
+            "Interactive interface cutting evaluation time by 60%."
+        ],
+        workflow: [
+            "Processed dataset of 280,000+ records.",
+            "Trained and evaluated Decision Tree algorithms.",
+            "Optimized model to minimize false positives.",
+            "Deployed interactive UI using Streamlit."
+        ],
+        links: `<a href="https://github.com/vandita-yadav/Credit-Card-Fraud-Prediction" class="btn-github" target="_blank">GitHub ↗</a>`
+    }
+};
+
+// 2. Function to inject data into the modal
+function populateModal(cardId) {
+    const data = projectData[cardId];
+    if (!data) return;
+
+    // Inject text
+    document.querySelector('.modal-title').textContent = data.title;
+    document.querySelector('.modal-subtitle').textContent = data.subtitle;
+    document.querySelector('.modal-desc').textContent = data.desc;
+
+    // Inject tech stack pills
+    const techContainer = document.querySelector('.modal-tech');
+    techContainer.innerHTML = data.tech.map(tech => `<span>${tech}</span>`).join('');
+
+    // Inject features list
+    const featuresList = document.querySelectorAll('.grid-column ul')[0];
+    featuresList.innerHTML = data.features.map(feat => `<li>${feat}</li>`).join('');
+
+    // Inject workflow list
+    const workflowList = document.querySelectorAll('.grid-column ul')[1];
+    workflowList.innerHTML = data.workflow.map(work => `<li>${work}</li>`).join('');
+
+    // Inject links (Live/GitHub)
+    document.querySelector('.link-buttons').innerHTML = data.links;
+}
+
+// 3. Open Modal Events
+if (modalOverlay && closeModalBtn && projectCards.length > 0) {
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            populateModal(card.id); // Load the correct data!
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// --- SCROLL TO TOP BUTTON LOGIC ---
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+if (scrollToTopBtn) {
+    // 1. Show button when scrolled down 300px from the top
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    // 2. Smooth scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // --- CONTACT FORM SUBMISSION LOGIC ---
 
-const contactForm = document.getElementById("contact-form");
+/*const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
 if (contactForm) {
@@ -157,4 +328,4 @@ if (contactForm) {
             }, 5000);
         }
     });
-}
+}*/

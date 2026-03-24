@@ -243,6 +243,674 @@ body {
     box-shadow: 0 0 4px #4ade80;
 }
 
+/* =========================================
+ABOUT SECTION
+========================================= */
+
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 100px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+/* --- LEFT SIDE: TEXT & ANIMATION --- */
+
+.about-left {
+    width: 50%;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* The Appear-Drop Animation Keyframes */
+@keyframes appearDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Starts slightly higher */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Drops into resting position */
+    }
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+    
+    /* Just keep it invisible by default */
+    opacity: 0;
+}
+
+.section-title.animate-drop {
+    /* The animation only runs when this class is added */
+    animation: appearDrop 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.2s; /* Shortened the delay so it feels snappy when scrolling */
+}
+
+.highlight-name {
+    /* Gradient matching the reference image */
+    background: linear-gradient(90deg, #8b5cf6, #ec4899, #f97316, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* --- RIGHT SIDE: IMAGE CARD EFFECT --- */
+
+.about-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* The angled background card behind your image */
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #1e3a8a; /* Deep blue to match the reference */
+    border-radius: 24px;
+    transform: rotate(6deg) translate(15px, 15px);
+    z-index: 0;
+    transition: transform 0.4s ease;
+}
+
+/* Optional: Fun hover effect that spreads the cards apart */
+.image-wrapper:hover::before {
+    transform: rotate(10deg) translate(25px, 25px);
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    position: relative; /* Keeps the image above the blue background */
+    z-index: 1;
+    background-color: #2f2f2f; /* Acts as a solid base if your photo has a transparent background */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* --- ABOUT SKILLS SECTION --- */
+
+.about-skills {
+    margin-top: 40px;
+}
+
+.skills-title {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+    background: rgba(45, 212, 191, 0.1); /* Subtle teal background */
+    color: #2dd4bf; /* Teal text */
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 50px; /* Pill shape */
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: rgba(45, 212, 191, 0.2);
+    border-color: #2dd4bf;
+    transform: translateY(-2px);
+}
+
+* --- EXPERIENCE CARD --- */
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+    max-width: 1250px;
+}
+
+.experience-card:hover {
+    border-color: #2dd4bf;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.exp-header h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.exp-company {
+    font-size: 16px;
+    color: #2dd4bf;
+    font-weight: 500;
+}
+
+.exp-date {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.exp-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.exp-details li {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Custom bullet points for the list */
+.exp-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+    font-size: 18px;
+    top: -2px;
+}
+
+
+/* =========================================
+PROJECTS SECTION
+========================================= */
+.project-title {
+    .projects-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+}
+.projects {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.projects-container {
+    width: 100%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.projects-intro {
+    color: #9ca3af;
+    font-size: 20px;
+    margin-bottom: 40px; /* Adds space between the intro and the cards */
+}
+/* The Individual Project Cards */
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: #2dd4bf;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2dd4bf;
+}
+
+
+/* =========================================
+   PROJECT MODAL OVERLAY (The Pop-up)
+========================================= */
+
+/* The dark background behind the modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Dark dimming effect */
+    backdrop-filter: blur(8px); /* Blurs the website behind it */
+    z-index: 1000;
+    
+    /* Flex setup to center the modal box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* This class will be added by JavaScript to show the modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* The actual modal box */
+.modal-content {
+    background: #0a0a0a; /* Deep dark background */
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto; /* Adds a scrollbar if content is too long */
+    border-radius: 16px;
+    border: 1px solid #222;
+    padding: 50px;
+    
+    /* Slide up slightly when appearing */
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Modal Typography & Layout */
+.close-modal-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #ffffff;
+}
+
+.modal-title {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.modal-desc {
+    font-size: 15px;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.modal-heading {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+/* Tech Stack Pills inside Modal */
+.modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.modal-tech span {
+    padding: 6px 14px;
+    background: transparent;
+    color: #d1d5db;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* 2-Column Grid for Features & Workflow */
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.grid-column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Link Buttons */
+.link-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.link-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-github {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.btn-github:hover {
+    background: #222;
+}
+
+/* Custom Scrollbar for the modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* =========================================
+   CREDENTIALS SECTION (Training & Achievements)
+========================================= */
+
+.credentials {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.credentials-container {
+    width: 100%;
+    max-width: 1250px; /* Increased to make it more spacious */
+    margin: 0 auto;
+}
+
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cred-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.cred-card:hover {
+    border-color: #2dd4bf;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cred-heading {
+    font-size: 20px;
+    color: #2dd4bf;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.cred-item h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.cred-org {
+    color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.cred-item ul, .cred-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cred-item ul li, .cred-list li {
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Custom teal arrow bullets */
+.cred-item ul li::before, .cred-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+    font-size: 16px;
+    top: 0;
+}
+
+/* Styling the View Certificate Link */
+.view-cert-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #2dd4bf; /* Teal color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.view-cert-link:hover {
+    color: #14b8a6;
+    transform: translateX(4px); /* Slides slightly to the right on hover */
+}
+
+/* Styling the List Links (Certifications & Achievements) */
+.cred-list li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.cred-list li a:hover {
+    color: #2dd4bf; /* Text turns teal when hovered */
+}
+
+/* =========================================
+   EXPERIENCE & EDUCATION SECTIONS
+========================================= */
+
+.experience, .education {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.experience-container, .education-container {
+    width: 100%;
+    max-width: 900px; /* Keeps the text from stretching too wide to read */
+    margin: 0 auto;
+}
+
+
+/* --- EDUCATION TIMELINE --- */
+
+.timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 35px;
+    border-left: 2px solid rgba(45, 212, 191, 0.2); /* The vertical line */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The glowing dot on the timeline */
+.timeline-dot {
+    position: absolute;
+    left: -42px; /* Pulls it perfectly onto the line */
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #2dd4bf;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(45, 212, 191, 0.4);
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: #2dd4bf;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.timeline-degree {
+    font-size: 15px;
+    color: #d1d5db;
+    margin-bottom: 12px;
+}
+
+.timeline-grade {
+    font-size: 14px;
+    color: #9ca3af;
+    font-style: italic;
+}
+
 /* CONTACT SECTION */
 
 .contact {
@@ -425,4 +1093,73 @@ body {
 
 .submit-btn:hover {
     background: #14b8a6;
+}
+
+/* Styling for Project Dates */
+.project-date {
+    font-size: 12px;
+    color: #2dd4bf;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Styling for Credentials Dates */
+.cred-date {
+    display: block;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* =========================================
+   SCROLL TO TOP BUTTON
+========================================= */
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: #2dd4bf; /* Teal accent */
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.4);
+    z-index: 999; /* Keeps it on top of everything else */
+    
+    /* Hidden by default */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* JavaScript will add this class when you scroll down */
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: #14b8a6;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3); /* Creates a smooth, glowing border expansion */
+}
+
+.scroll-top-icon {
+    width: 24px;  /* Adjust this number if the icon feels too big or small */
+    height: 24px;
+    /* If your SVG is completely black and you ever want to change its color to white, you can use: filter: invert(1); */
 }

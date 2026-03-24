@@ -18,14 +18,17 @@
             </div>
 
             <nav class="nav-links">
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#">Blog</a>
-                <a href="#">Experience</a>
-                <a href="#">Contact</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
             </nav>
 
         </header>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
 
         <section class="homepage">
 
@@ -49,7 +52,7 @@
                 </p>
 
                 <div class="homepage-buttons">
-                    <a href="#contact" target="_blank"><button>Get In Touch</button></a>
+                    <a href="#contact"><button>Get In Touch</button></a>
                     <a href="assets/cv/Vandita_Yadav_General_CV.pdf" download><button>Download CV</button></a>
                 </div>
 
@@ -61,6 +64,244 @@
 
         </section>
 
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+        <section id="about" class="about">
+            <div class="about-container">
+                
+                <div class="about-left">
+                    <p class="section-subtitle">A LITTLE ABOUT ME</p>
+                    <h2 class="section-title">Nice to meet you. I'm <span class="highlight-name">Vandita</span>.</h2>
+
+                    <div class="about-text">
+                        <p>I am a computer science student passionate about transforming complex ideas into practical, scalable software. I focus on backend engineering, full-stack development, and data science—prioritizing clean architecture and modern solutions that drive real value.</p>
+                        
+                        <p>Beyond writing code, I enjoy exploring Artificial Intelligence and Machine Learning. Building hands-on projects has taught me firsthand how to design, ship, and scale meaningful applications from the ground up.</p>
+                        
+                        <p>My philosophy is simple: build things that last. I am always eager to learn, adapt, and bridge the gap between concept and reality with code that performs.</p>
+                        <p>I'm a big believer in building in public and learning by doing. Whether you have a fun project idea, an open-source initiative, or just want to chat about AI/ML and development, my inbox is always open. Let's build something awesome together!</p>
+                        <div class="about-skills">
+                        <p class="skills-title">MY TECH STACK</p>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Postman API</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <div class="image-wrapper">
+                        <img src="assets/images/edit_pic.png" alt="Vandita" class="about-img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <p class="section-subtitle">WORK & CONTRIBUTIONS</p>
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Open Source Contributor</h3>
+                            <p class="exp-company">GirlScript Summer of Code (GSSOC)</p>
+                        </div>
+                        <span class="exp-date">Jul 2025 - Oct 2025</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Engineered and deployed multiple interactive, full-stack analytics dashboards integrating machine learning models (such as LSTM and Naive Bayes) for real-time data processing and predictive insights.</li>
+                        <li>Implemented comprehensive data-driven modules capable of parsing datasets to perform real-time filtering, visualize performance trends, and automatically identify patterns and skill gaps via dynamic charts.</li>
+                        <li>Enhanced model transparency and user trust by integrating advanced evaluation metrics, statistical analysis, and feature explainability tools (like LIME) directly into user-facing interfaces.</li>
+                        <li>Optimized system architectures and streamlined deployment workflows using Git and GitHub, successfully achieving a 25% increase in inference speed and improving overall model efficiency.</li>
+                        <li>Contributed reusable machine learning modules and structured technical documentation, enhancing repository maintainability and reducing new contributor onboarding time by approximately 30%.</li>
+                    </ul>
+
+                    <a href="https://drive.google.com/file/d/13xyQrHPTFNy1rHdIJyzRL7FBko-X_I-5/view?usp=sharing" class="view-cert-link" target="_blank" style="margin-top: 20px; display: inline-block;">View Certificate ↗</a>
+                </div>
+            </div>
+        </section>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="projects" class="projects">
+            <div class="projects-container">
+                <h2 class="section-title">Projects</h2>
+                <p class="projects-intro">
+                    A showcase of my recent work across machine learning, data analysis, and software development.<br>
+                    Focusing on building scalable solutions, deriving actionable insights, and deploying real-world applications.</p>
+                <div class="projects-grid">
+                    <div class="project-card" id="card-metro">
+                        <h3>Metro Lens</h3>
+                        <span class="project-date">Nov 2025</span>
+                        <p>Ridership & Operations Intelligence Dashboard</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+
+                    <div class="project-card" id="card-netflix">
+                        <h3>Netflix Recommender System</h3>
+                        <span class="project-date">Jul 2025</span>
+                        <p>Content-based recommender for 32,000+ titles</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+
+                    <div class="project-card" id="card-fraud">
+                        <h3>Credit Card Fraud Prediction</h3>
+                        <span class="project-date">Feb 2025</span>
+                        <p>Real-time ML fraud detection dashboard</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="project-modal" class="modal-overlay">
+            <div class="modal-content">
+                
+                <button class="close-modal-btn">
+                    ← Back to projects
+                </button>
+                
+                <div class="modal-body">
+                    <h2 class="modal-title">Netflix & TV Shows Content Analyser</h2>
+                    <p class="modal-subtitle">An interactive Streamlit-powered recommender system for 32,000+ movies and TV shows.</p>
+                    
+                    <p class="modal-desc">This project is a content-based recommender that achieves 85% relevance using genre and language insights[cite: 160]. It utilizes cosine similarity on combined features (genre, cast, director, description) to generate smart recommendations. Performance is highly optimized by accelerating memory handling with Joblib, reducing the 7.6 GB matrix load times by 40%[cite: 161].</p>
+                    
+                    <h4 class="modal-heading">Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>Streamlit</span>
+                        <span>Joblib</span>
+                    </div>
+
+                    <div class="modal-info-grid">
+                        <div class="grid-column">
+                            <h4 class="modal-heading">Key Features</h4>
+                            <ul>
+                                <li>Content-based recommendations showing 5 similar titles.</li>
+                                <li>Filtering for Top 20 titles globally by language or genre.</li>
+                                <li>Interactive Streamlit dashboard with modular functions.</li>
+                                <li>Advanced data preprocessing and text normalization.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-column">
+                            <h4 class="modal-heading">Technical Workflow</h4>
+                            <ul>
+                                <li>Vectorized text using CountVectorizer.</li>
+                                <li>Calculated cosine similarity for content matching.</li>
+                                <li>Saved the massive 7.6 GB similarity matrix locally via Joblib.</li>
+                                <li>Handled missing source data without breaking the UI.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="modal-links">
+                        <h4 class="modal-heading">Links</h4>
+                        <div class="link-buttons">
+                            <a href="https://github.com/vandita-yadav/Netflix-TV-Shows-Content-Explorer" class="btn-github" target="_blank">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="credentials" class="credentials">
+            <div class="credentials-container">
+                <p class="section-subtitle">CONTINUOUS LEARNING</p>
+                <h2 class="section-title">Training, Certifications & Achievements</h2>
+
+                <div class="credentials-grid">
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Training</h3>
+                        <div class="cred-item">
+                            <h4>Trainee in AI & Machine Learning</h4>
+                            <p class="cred-org">CSE Pathshala | Jun - Jul 2025</p>
+                            <ul>
+                                <li>Mastered advanced Python for AI/ML, ML workflows, and data visualization.</li>
+                                <li>Improved model accuracy by up to 15% across end-to-end pipelines.</li>
+                            </ul>
+                            <a href="https://drive.google.com/file/d/1M3Jzu8gJBivcE_Bfr6OM2P6GX2A7JePN/view?usp=sharing" class="view-cert-link" target="_blank">View Certificate ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Certifications</h3>
+                        <ul class="cred-list">
+                            <li><a href="https://drive.google.com/drive/folders/133pZDW3qfOz-HGseCTohyz3OlmFlqVT2?usp=drive_link" target="_blank">Postman API Fundamentals Student Expert ↗</a><span class="cred-date">Aug 2025</span></li>
+                            <li><a href="https://drive.google.com/file/d/1f0cOXTze08pXaGIuUW77l4bKJwHIRZF8/view?usp=sharing" target="_blank">Summer of Quant Workshop Merit - IIT Kharagpur ↗</a><span class="cred-date">Sep 2024</span></li>
+                            <li><a href="https://www.skills.google/public_profiles/ec76d30f-4845-46c4-973c-841e95974dda" target="_blank">Prompt Design in Vertex AI - Google Cloud ↗</a><span class="cred-date">Jun 2024</span></li>
+                            <li><a href="https://drive.google.com/file/d/1JiWC20D_JozvDax6r4br_SzpTwEYs3KD/view?usp=sharing" target="_blank">Mastering 3D Modelling - Resolute Lab India ↗</a><span class="cred-date">May 2024</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Achievements</h3>
+                        <ul class="cred-list">
+                            <li><a href="https://www.skills.google/public_profiles/ec76d30f-4845-46c4-973c-841e95974dda" target="_blank">Google Cloud SkillBoost Badges (Gen AI & LLMs) ↗</a><span class="cred-date">Aug 2024</span></li>
+                            <li><a href="https://drive.google.com/drive/folders/1ZsZSZBtRGdcQ77Nwa-5kL_XeLPe3jTLm?usp=drive_link" target="_blank">HackerRank & HackerEarth Beginner Badges (Python, Java, DSA) ↗</a><span class="cred-date">Sep 2023</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="education" class="education">
+            <div class="education-container">
+                <p class="section-subtitle">ACADEMIC BACKGROUND</p>
+                <h2 class="section-title">Education</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Aug 2023 - Present</span>
+                            <h3>Lovely Professional University</h3>
+                            <p class="timeline-degree">Bachelor of Technology - Computer Science and Engineering</p>
+                            <p class="timeline-grade">CGPA: 8.14</p>
+                            <p class="timeline-grade">Location: Phagwara, Punjab</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Apr 2021 - Mar 2022</span>
+                            <h3>Girls' High School & College</h3>
+                            <p class="timeline-degree">Intermediate (12th)</p>
+                            <p class="timeline-grade">Percentage: 78.9%</p>
+                            <p class="timeline-grade">Location: Prayagraj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Apr 2019 - Mar 2020</span>
+                            <h3>Girls' High School & College</h3>
+                            <p class="timeline-degree">Matriculation (10th)</p>
+                            <p class="timeline-grade">Percentage: 94.4%</p>
+                            <p class="timeline-grade">Location: Prayagraj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
         <section id="contact" class="contact">
 
             <div class="contact-container">
@@ -164,10 +405,16 @@
             </div>
         </section>
 
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
         <script src="script.js"></script>
-        
+
+        <button id="scrollToTopBtn" class="scroll-top-btn" aria-label="Scroll to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <img src="assets/icons/go-up.svg" alt="Scroll to top" class="scroll-top-icon">
+        </button>
+
     </body>
 </html>
