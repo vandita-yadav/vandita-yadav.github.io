@@ -270,6 +270,30 @@ if (scrollToTopBtn) {
     });
 }
 
+// --- CLEAN URL SMOOTH SCROLLING ---
+// Find every link on the page that starts with a "#" (your navigation links)
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // 1. Stop the default behavior (This prevents the '#' from adding to the URL!)
+        e.preventDefault();
+        
+        // 2. Get the exact word after the '#' (like "projects" or "experience")
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        // 3. If that section exists, glide smoothly to it
+        if (targetSection) {
+            window.scrollTo({
+                // The - 50 gives a little breathing room at the top so the header doesn't cover the title
+                top: targetSection.offsetTop - 50, 
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 // --- CONTACT FORM SUBMISSION LOGIC ---
 
 /*const contactForm = document.getElementById("contact-form");
