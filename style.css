@@ -1587,38 +1587,11 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     color: #2dd4bf;
 }
 
-/* --- PROJECT CARD GLASS EFFECT ---
-.project-card {
-    position: relative;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(45, 212, 191, 0.3), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.project-card:hover::after {
-    opacity: 1;
-}
-
-.project-card:hover .read-more {
-    color: #4ade80;
-    transform: translateX(5px);
-} */
-
 /* =========================================
    PROJECT CARDS (ROTATING SPOTLIGHT ONLY)
+========================================= */
+/* =========================================
+   PROJECT CARDS (ROTATION + DEEP SHADOW)
 ========================================= */
 .project-card {
     background: rgba(255, 255, 255, 0.03);
@@ -1631,12 +1604,20 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     justify-content: space-between;
     min-height: 200px;
     position: relative;
-    overflow: hidden; /* CRUCIAL: Keeps the rotating glow strictly inside the rounded card! */
+    overflow: hidden; 
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 8px 32px 0 rgba(0, 78, 67, 0.4);
 }
 
-/* Brother's Rotating Gradient (Intensity reduced for a softer, pro look) */
+/* .project-card {
+    background: rgba(255, 255, 255, 0.08);  /* Increase from 0.03 */
+    /* backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+} */ 
+
+/* Brother's Rotating Gradient Layer */
 .project-card::before {
     content: '';
     position: absolute;
@@ -1644,18 +1625,17 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     left: -50%;
     width: 200%;
     height: 200%;
-    /* Reduced the opacity from 0.1 to 0.05 for a much softer glow */
     background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.5s ease;
     transform: rotate(0deg);
-    pointer-events: none; /* Stops it from blocking your clicks */
+    pointer-events: none;
     z-index: 0;
 }
 
 .project-card:hover::before {
     opacity: 1;
-    animation: rotateGradient 4s linear infinite; /* Slowed down slightly for elegance */
+    animation: rotateGradient 4s linear infinite;
 }
 
 @keyframes rotateGradient {
@@ -1663,18 +1643,22 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     100% { transform: rotate(360deg); }
 }
 
-/* Keeps your text clearly above the glowing background */
-.project-card h3, .project-card p, .project-card .read-more {
-    position: relative;
-    z-index: 1;
-}
-
-/* The Hover Lift & Border */
+/* THE HOVER STATE: Restored Deep Shadow & Lift */
 .project-card:hover {
     background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-5px);
-    border-color: rgba(45, 212, 191, 0.4); /* Soft teal border light-up */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px); /* Slightly more lift for a pro feel */
+    border-color: rgba(45, 212, 191, 0.4);
+    
+    /* RE-ADDED DEEP SHADOW: Makes the card pop off the screen */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(45, 212, 191, 0.1); 
+}
+
+/* Text Protection (Ensures content stays readable over the glow) */
+.project-card h3, 
+.project-card p, 
+.project-card .read-more {
+    position: relative;
+    z-index: 1;
 }
 
 .project-card h3 {
