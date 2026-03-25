@@ -113,6 +113,23 @@ body {
     color: #4b9aef;
 }
 
+/* --- Hamburger Menu Icon (Hidden on Desktop) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001; /* Keeps it above the sliding panel */
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #e5e7eb;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
 .homepage {
     width: 100%;
     min-height: 100vh;
@@ -1173,42 +1190,66 @@ PROJECTS SECTION
         padding-right: 20px;
     }
 
-    /* 2. Fix the Navigation Bar */
+    /* 2. Fix the Navigation Bar & Hamburger Panel */
     .navbar {
-        flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        gap: 15px;
+        flex-direction: row; /* Keeps VY on left, hamburger on right */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        position: fixed; /* Locks header to top on mobile */
+        top: 0;
+        background: rgba(17, 17, 17, 0.95); /* Dark background so text doesn't clash when scrolling */
+        backdrop-filter: blur(10px);
+        z-index: 1000;
     }
-    .nav-links {
+    
+    .hamburger {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
     }
+
+    /* Hamburger to 'X' Animation */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* The Slide-Out Panel */
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Hidden completely off-screen to the right */
+        top: 0;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        width: 65%; /* Panel takes up 65% of screen */
+        height: 100vh;
+        padding-top: 100px;
+        justify-content: flex-start;
+        align-items: center;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        gap: 25px;
+    }
+
+    .nav-links.active {
+        right: 0; /* Slides in when clicked */
+    }
+
     .nav-links a {
-        margin-left: 0;
-        font-size: 14px;
+        margin: 0;
+        font-size: 18px;
     }
 
     /* 3. Stack the Homepage / Hero Section */
     .homepage {
         flex-direction: column;
         text-align: center;
-        padding-top: 120px;
-    }
-    .homepage-left, .homepage-right {
-        width: 100%;
-    }
-    .homepage-left h1 {
-        font-size: 40px; /* Shrink massive text */
-    }
-    .availability, .homepage-buttons {
-        justify-content: center; /* Center buttons and status */
-    }
-    .homepage-right {
-        height: 400px; /* Give the 3D laptop space to render */
-        margin-top: 40px;
+        /* Decreased distance between header and homepage text by 50% */
+        padding-top: 90px; 
     }
 
     /* 4. Stack About & Contact 50/50 Columns */

@@ -294,6 +294,29 @@ navLinks.forEach(link => {
     });
 });
 
+
+
+// --- MOBILE HAMBURGER MENU LOGIC ---
+const hamburger = document.getElementById('hamburger');
+const navLinksMenu = document.getElementById('nav-links');
+const mobileNavItems = document.querySelectorAll('.nav-links a');
+
+if (hamburger) {
+    // Toggle menu open/close
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinksMenu.classList.toggle('active');
+    });
+
+    // Close the menu automatically when a link is clicked
+    mobileNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinksMenu.classList.remove('active');
+        });
+    });
+}
+
 // --- CONTACT FORM SUBMISSION LOGIC ---
 
 /*const contactForm = document.getElementById("contact-form");
