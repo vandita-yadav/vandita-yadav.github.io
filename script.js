@@ -30,14 +30,14 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 
-// If on a mobile phone, move the camera closer so the laptop looks bigger!
+// Perfecting the framing and the top-down angle
 if (window.innerWidth <= 768) {
-    camera.position.z = 7; // Closer zoom for mobile
+    camera.position.z = 7.8; // The exact sweet spot for mobile size vs. no clipping
+    camera.position.y = 2.5; // Raises the camera up to reveal the keyboard
 } else {
-    camera.position.z = 10; // Standard zoom for desktop
+    camera.position.z = 10.5; // The exact sweet spot for desktop size vs. no clipping
+    camera.position.y = 3.5; // Raises the camera up to reveal the keyboard
 }
-
-camera.position.z = 10;
 
 
 // RENDERER
@@ -60,8 +60,15 @@ const controls = new THREE.OrbitControls(
 controls.enableDamping = true;
 controls.enableZoom = false;
 
+// NEW: Tell the camera to look slightly lower to match the new laptop height!
+// This centers the rotation and stops the top corner from clipping.
+controls.target.set(0, -1.0, 0);
+
 // LOADER
 const loader = new THREE.GLTFLoader();
+
+// LOADER
+//const loader = new THREE.GLTFLoader();
 
 loader.load(
     "assets/models/laptop.glb",
@@ -69,7 +76,7 @@ loader.load(
 
         model = gltf.scene;
 
-        model.scale.set(1.8, 1.8, 1.8);
+        model.scale.set(1.7, 1.7, 1.7);
 
         // center model
         const box = new THREE.Box3().setFromObject(model);
@@ -77,23 +84,10 @@ loader.load(
 
         model.position.sub(center);
 
-        baseY = -0.6;
+        baseY = -1.2;
         model.position.y = baseY;
 
-        // --- SMOOTH ROTATION LOGIC ---
-        // 1. Get the previous rotation count
-        let prevRotationCount = parseInt(localStorage.getItem("laptopRotations")) || 0;
-        let currentRotationCount = prevRotationCount + 1;
-        
-        // 2. Save the new count for next time
-        localStorage.setItem("laptopRotations", currentRotationCount);
-
-        // 3. Start the laptop at the previous angle
-        model.rotation.y = prevRotationCount * (Math.PI / 1.8);
-        
-        // 4. Set the target to the new angle (60 degrees further)
-        targetRotationY = currentRotationCount * (Math.PI / 1.8);
-        // -----------------------------
+        // (The old rotation math used to be here, now it's beautifully clean!)
 
         scene.add(model);
     }
