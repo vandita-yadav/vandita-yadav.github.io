@@ -1262,10 +1262,11 @@ MOBILE RESPONSIVENESS (Screens under 768px)
 
     /* 4. The 3D Laptop Scroll Fix */
     .homepage-right {
-        height: 250px; /* Makes it a compact accent, not a massive rectangle */
+        width: 55%; /* Leaves a massive 45% safe lane on the left for your thumb! */
+        align-self: flex-end; 
+        height: 250px; 
         min-height: 250px;
         margin-top: 10px;
-        /* pointer-events: none; Crucial: Stops the model from stealing your touch scroll! */
     }
 
     /* 5. About Pic & Stacked Columns */

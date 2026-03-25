@@ -30,6 +30,13 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 
+// If on a mobile phone, move the camera closer so the laptop looks bigger!
+if (window.innerWidth <= 768) {
+    camera.position.z = 7; // Closer zoom for mobile
+} else {
+    camera.position.z = 10; // Standard zoom for desktop
+}
+
 camera.position.z = 10;
 
 
