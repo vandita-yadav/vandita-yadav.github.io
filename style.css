@@ -1265,7 +1265,7 @@ MOBILE RESPONSIVENESS (Screens under 768px)
         height: 250px; /* Makes it a compact accent, not a massive rectangle */
         min-height: 250px;
         margin-top: 10px;
-        pointer-events: none; /* Crucial: Stops the model from stealing your touch scroll! */
+        /* pointer-events: none; Crucial: Stops the model from stealing your touch scroll! */
     }
 
     /* 5. About Pic & Stacked Columns */
