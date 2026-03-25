@@ -525,8 +525,8 @@ PROJECTS SECTION
 }
 /* The Individual Project Cards */
 .project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 30px;
     border-radius: 16px;
     cursor: pointer;
@@ -535,12 +535,15 @@ PROJECTS SECTION
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
 }
 
 .project-card:hover {
     background: rgba(255, 255, 255, 0.06);
     transform: translateY(-5px);
-    border-color: #2dd4bf;
+    border-color: rgb(255, 255, 255);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -1261,12 +1264,19 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     }
 
     /* 4. The 3D Laptop Scroll Fix */
+    /* 4. The "Apple Store" Centerpiece 3D Model */
     .homepage-right {
-        width: 55%; /* Leaves a massive 45% safe lane on the left for your thumb! */
-        align-self: flex-end; 
-        height: 250px; 
-        min-height: 250px;
-        margin-top: 10px;
+        width: 100%; /* Spans the whole screen width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 280px; /* Perfect height to showcase the model */
+        margin-top: 30px; /* Nice breathing room below your intro text */
+        
+        /* The Magic Lock: This puts a glass shield over the model. 
+           It will auto-rotate beautifully, but users can scroll right 
+           over it without getting their fingers trapped! */
+        pointer-events: none; 
     }
 
     /* 5. About Pic & Stacked Columns */
