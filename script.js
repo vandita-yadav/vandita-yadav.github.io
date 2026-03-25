@@ -102,7 +102,7 @@ function animate() {
         model.position.y = baseY + Math.sin(Date.now() * 0.0012) * 0.35;
         
         // 2. The continuous pro-spin! (Change 0.005 to make it faster or slower)
-        model.rotation.y += 0.005; 
+        model.rotation.y += 0.008; 
     }
 
     controls.update();

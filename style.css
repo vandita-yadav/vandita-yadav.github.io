@@ -1,3 +1,5 @@
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -185,7 +187,7 @@ body {
     margin-bottom: 35px;
 }
 
-.homepage-buttons {
+/* .homepage-buttons {
     display: flex;
     gap: 16px;
 }
@@ -219,6 +221,51 @@ body {
 
 .homepage-buttons button:hover {
     opacity: 0.85;
+}
+
+.homepage-buttons a {
+    text-decoration: none;
+} */
+
+.homepage-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.homepage-buttons button {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+.homepage-buttons button:first-child {
+    background: white;
+    color: black;
+}
+
+.homepage-buttons button:last-child {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+.homepage-buttons button:hover {
+    opacity: 0.85;
+}
+
+/* Brother's Glow Effects on Hover */
+.homepage-buttons button:first-child:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.homepage-buttons button:last-child:hover {
+    border-color: #2dd4bf; /* Lights up the border to match the glow */
+    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.2), 0 0 15px rgba(45, 212, 191, 0.3);
 }
 
 .homepage-buttons a {
@@ -1560,67 +1607,85 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     transform: translateX(5px);
 } */
 
-
 /* =========================================
-   THE ULTIMATE PROJECT CARD (MERGED)
+   PROJECT CARDS (ROTATING SPOTLIGHT ONLY)
 ========================================= */
 .project-card {
-    /* Your original structural layout */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
-    padding: 30px;
-    border-radius: 16px;
-    cursor: pointer;
-    
-    /* The best of both Glassmorphism effects */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    
-    /* Brother's addition for the hover glow */
     position: relative;
-    overflow: hidden; /* Keeps the inner glow from spilling out */
+    overflow: hidden; /* CRUCIAL: Keeps the rotating glow strictly inside the rounded card! */
+    backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Brother's inner radial glow effect */
-.project-card::after {
+/* Brother's Rotating Gradient (Intensity reduced for a softer, pro look) */
+.project-card::before {
     content: '';
     position: absolute;
     top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(45, 212, 191, 0.15), transparent 70%);
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Reduced the opacity from 0.1 to 0.05 for a much softer glow */
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
     opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
+    transition: opacity 0.5s ease;
+    transform: rotate(0deg);
+    pointer-events: none; /* Stops it from blocking your clicks */
     z-index: 0;
 }
 
-/* The Unified Hover State */
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: #2dd4bf;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(45, 212, 191, 0.2);
+.project-card:hover::before {
+    opacity: 1;
+    animation: rotateGradient 4s linear infinite; /* Slowed down slightly for elegance */
 }
 
-.project-card:hover::after {
-    opacity: 1; /* Turns on the inner glow */
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* Ensures text stays above the glowing background */
-.project-card h3, .project-card p, .project-card span {
+/* Keeps your text clearly above the glowing background */
+.project-card h3, .project-card p, .project-card .read-more {
     position: relative;
     z-index: 1;
 }
 
-/* Brother's 'read-more' text slide animation */
+/* The Hover Lift & Border */
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: rgba(45, 212, 191, 0.4); /* Soft teal border light-up */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Smooth Sliding Read More Text */
 .project-card .read-more {
-    display: inline-block; /* Required for the slide transition to work */
+    font-size: 13px;
+    font-weight: 600;
+    color: #2dd4bf;
+    display: inline-block;
     transition: all 0.3s ease;
 }
 
@@ -1628,6 +1693,7 @@ MOBILE RESPONSIVENESS (Screens under 768px)
     color: #4ade80;
     transform: translateX(5px);
 }
+
 
 
 /* --- MODAL ENHANCEMENTS --- */
@@ -1841,3 +1907,74 @@ textarea:focus {
 }
 
 
+/* =========================================
+   TECH STACK PILLS (MINIMAL PRO FUSION)
+========================================= */
+.modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.modal-tech span {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.03); /* Clean, dark glass base */
+    color: #d1d5db;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+/* The Premium Hover: A soft lift and a clean teal glow instead of blinding neon */
+.modal-tech span:hover {
+    background: rgba(45, 212, 191, 0.1);
+    color: #2dd4bf;
+    border-color: #2dd4bf;
+    transform: translateY(-3px); /* Gentle lift */
+    box-shadow: 0 6px 15px rgba(45, 212, 191, 0.2); /* Soft, professional glow */
+}
+
+/* =========================================
+   ABOUT SECTION SKILLS (WITH SHIMMER)
+========================================= */
+.skill-tag {
+    padding: 8px 16px;
+    background: rgba(45, 212, 191, 0.1);
+    color: #2dd4bf;
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative; /* Needed for shimmer */
+    overflow: hidden;   /* Keeps shimmer inside the pill */
+}
+
+/* The Shimmer Beam */
+.skill-tag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(45, 212, 191, 0.2);
+    border-color: #2dd4bf;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+}
+
+/* Slides the shimmer beam across when hovered */
+.skill-tag:hover::after {
+    left: 100%;
+}
