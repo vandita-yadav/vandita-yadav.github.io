@@ -1181,96 +1181,120 @@ PROJECTS SECTION
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS (Screens under 768px)
+MOBILE RESPONSIVENESS (Screens under 768px)
 ========================================= */
-@media (max-width: 768px) {
-    /* 1. Shrink heavy padding on all sections */
-    .navbar, .homepage, .about, .projects, .credentials, .experience, .education, .contact {
-        padding-left: 20px;
-        padding-right: 20px;
+@media (max-width: 768px) 
+{
+    /* 1. Uniform Section Spacing (Closes the massive gaps) */
+    .homepage {
+        padding: 100px 20px 40px 20px; /* Reduced header distance */
+        min-height: auto;
+    }
+    .about, .projects, .credentials, .experience, .education, .contact {
+        padding: 50px 20px; /* Slashes the 100px desktop gap in half */
     }
 
-    /* 2. Fix the Navigation Bar & Hamburger Panel */
+    /* 2. Header & Hamburger Panel Fix */
     .navbar {
-        flex-direction: row; /* Keeps VY on left, hamburger on right */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
-        position: fixed; /* Locks header to top on mobile */
+        padding: 15px 20px;
+        position: fixed;
         top: 0;
-        background: rgba(17, 17, 17, 0.95); /* Dark background so text doesn't clash when scrolling */
+        background: rgba(17, 17, 17, 0.98); /* Less transparent */
         backdrop-filter: blur(10px);
         z-index: 1000;
     }
     
-    .hamburger {
-        display: flex;
-    }
+    .hamburger { display: flex; }
 
-    /* Hamburger to 'X' Animation */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* The Slide-Out Panel */
+    /* The Panel: Forced into a single vertical column */
     .nav-links {
         position: fixed;
-        right: -100%; /* Hidden completely off-screen to the right */
+        right: -100%;
         top: 0;
         flex-direction: column;
-        background-color: #1a1a1a;
-        width: 65%; /* Panel takes up 65% of screen */
+        flex-wrap: nowrap; /* Stops the 3x2 grid issue */
+        background-color: rgba(20, 20, 20, 0.98); /* Less transparent */
+        width: 70%;
         height: 100vh;
         padding-top: 100px;
         justify-content: flex-start;
         align-items: center;
         transition: right 0.4s ease;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.8);
         gap: 25px;
     }
 
-    .nav-links.active {
-        right: 0; /* Slides in when clicked */
-    }
-
+    .nav-links.active { right: 0; }
     .nav-links a {
         margin: 0;
         font-size: 18px;
+        width: 100%;
+        text-align: center;
     }
 
-    /* 3. Stack the Homepage / Hero Section */
+    /* Hamburger to 'X' Animation */
+    .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* 3. Homepage Text Fixes */
     .homepage {
         flex-direction: column;
-        text-align: center;
-        /* Decreased distance between header and homepage text by 50% */
-        padding-top: 90px; 
+        text-align: left; /* Pulls text out of the dead center */
+    }
+    .homepage-left, .homepage-right {
+        width: 100%;
+    }
+    .homepage-left h1 {
+        font-size: 32px; /* Stops words from stacking */
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    .homepage-left p:nth-of-type(2) {
+        font-size: 15px;
+    }
+    .availability, .homepage-buttons {
+        justify-content: flex-start; /* Aligns to left edge */
     }
 
-    /* 4. Stack About & Contact 50/50 Columns */
+    /* 4. The 3D Laptop Scroll Fix */
+    .homepage-right {
+        height: 250px; /* Makes it a compact accent, not a massive rectangle */
+        min-height: 250px;
+        margin-top: 10px;
+        pointer-events: none; /* Crucial: Stops the model from stealing your touch scroll! */
+    }
+
+    /* 5. About Pic & Stacked Columns */
     .about-container, .contact-container {
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
     }
     .about-left, .about-right, .contact-left, .contact-right {
         width: 100%;
     }
-
-    /* 5. Fix the Contact Form Inputs */
-    .half-width {
-        width: 100%; /* Makes first/last name stack instead of squishing */
+    .image-wrapper {
+        max-width: 220px; /* Makes the photo small and cute on mobile */
+        margin: 0 auto;
     }
 
-    /* 6. General Typography & Spacing Fixes */
-    .section-title, .projects-title {
-        font-size: 32px;
-    }
+    /* 6. Education Timeline Fix */
     .timeline {
-        padding-left: 20px; /* Keep timeline dots on screen */
+        margin-left: 15px; /* Pushes line away from the screen edge */
+        padding-left: 25px;
+    }
+
+    /* 7. Contact Form Fix */
+    .half-width {
+        width: 100%;
+    }
+
+    /* 8. Title Resizing */
+    .section-title, .projects-title {
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 }
