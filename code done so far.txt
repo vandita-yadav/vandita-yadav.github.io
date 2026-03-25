@@ -22,15 +22,16 @@ portfolio/
 
 
 
-index.html
-
+index.html code
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vandita Yadav Portfolio</title>
+        <title>Vandita Yadav | Portfolio</title>
+
+        <link rel="icon" type="image/png" href="assets/images/favicon_logo.png">
 
         <link rel="stylesheet" href="style.css">
     </head>
@@ -40,18 +41,21 @@ index.html
         <header class="navbar">
 
             <div class="logo">
-                VY
+                VY.
             </div>
 
             <nav class="nav-links">
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#">Blog</a>
-                <a href="#">Experience</a>
-                <a href="#">Contact</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
             </nav>
 
         </header>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
 
         <section class="homepage">
 
@@ -75,7 +79,7 @@ index.html
                 </p>
 
                 <div class="homepage-buttons">
-                    <a href="#contact" target="_blank"><button>Get In Touch</button></a>
+                    <a href="#contact"><button>Get In Touch</button></a>
                     <a href="assets/cv/Vandita_Yadav_General_CV.pdf" download><button>Download CV</button></a>
                 </div>
 
@@ -87,6 +91,244 @@ index.html
 
         </section>
 
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+        <section id="about" class="about">
+            <div class="about-container">
+                
+                <div class="about-left">
+                    <p class="section-subtitle">A LITTLE ABOUT ME</p>
+                    <h2 class="section-title">Nice to meet you. I'm <span class="highlight-name">Vandita</span>.</h2>
+
+                    <div class="about-text">
+                        <p>I am a computer science student passionate about transforming complex ideas into practical, scalable software. I focus on backend engineering, full-stack development, and data science—prioritizing clean architecture and modern solutions that drive real value.</p>
+                        
+                        <p>Beyond writing code, I enjoy exploring Artificial Intelligence and Machine Learning. Building hands-on projects has taught me firsthand how to design, ship, and scale meaningful applications from the ground up.</p>
+                        
+                        <p>My philosophy is simple: build things that last. I am always eager to learn, adapt, and bridge the gap between concept and reality with code that performs.</p>
+                        <p>I'm a big believer in building in public and learning by doing. Whether you have a fun project idea, an open-source initiative, or just want to chat about AI/ML and development, my inbox is always open. Let's build something awesome together!</p>
+                        <div class="about-skills">
+                        <p class="skills-title">MY TECH STACK</p>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Postman API</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <div class="image-wrapper">
+                        <img src="assets/images/edit_pic.png" alt="Vandita" class="about-img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <p class="section-subtitle">WORK & CONTRIBUTIONS</p>
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Open Source Contributor</h3>
+                            <p class="exp-company">GirlScript Summer of Code (GSSOC)</p>
+                        </div>
+                        <span class="exp-date">Jul 2025 - Oct 2025</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Engineered and deployed multiple interactive, full-stack analytics dashboards integrating machine learning models (such as LSTM and Naive Bayes) for real-time data processing and predictive insights.</li>
+                        <li>Implemented comprehensive data-driven modules capable of parsing datasets to perform real-time filtering, visualize performance trends, and automatically identify patterns and skill gaps via dynamic charts.</li>
+                        <li>Enhanced model transparency and user trust by integrating advanced evaluation metrics, statistical analysis, and feature explainability tools (like LIME) directly into user-facing interfaces.</li>
+                        <li>Optimized system architectures and streamlined deployment workflows using Git and GitHub, successfully achieving a 25% increase in inference speed and improving overall model efficiency.</li>
+                        <li>Contributed reusable machine learning modules and structured technical documentation, enhancing repository maintainability and reducing new contributor onboarding time by approximately 30%.</li>
+                    </ul>
+
+                    <a href="https://drive.google.com/file/d/13xyQrHPTFNy1rHdIJyzRL7FBko-X_I-5/view?usp=sharing" class="view-cert-link" target="_blank" style="margin-top: 20px; display: inline-block;">View Certificate ↗</a>
+                </div>
+            </div>
+        </section>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="projects" class="projects">
+            <div class="projects-container">
+                <h2 class="section-title">Projects</h2>
+                <p class="projects-intro">
+                    A showcase of my recent work across machine learning, data analysis, and software development.<br>
+                    Focusing on building scalable solutions, deriving actionable insights, and deploying real-world applications.</p>
+                <div class="projects-grid">
+                    <div class="project-card" id="card-metro">
+                        <h3>Metro Lens</h3>
+                        <span class="project-date">Nov 2025</span>
+                        <p>Ridership & Operations Intelligence Dashboard</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+
+                    <div class="project-card" id="card-netflix">
+                        <h3>Netflix Recommender System</h3>
+                        <span class="project-date">Jul 2025</span>
+                        <p>Content-based recommender for 32,000+ titles</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+
+                    <div class="project-card" id="card-fraud">
+                        <h3>Credit Card Fraud Prediction</h3>
+                        <span class="project-date">Feb 2025</span>
+                        <p>Real-time ML fraud detection dashboard</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="project-modal" class="modal-overlay">
+            <div class="modal-content">
+                
+                <button class="close-modal-btn">
+                    ← Back to projects
+                </button>
+                
+                <div class="modal-body">
+                    <h2 class="modal-title">Netflix & TV Shows Content Analyser</h2>
+                    <p class="modal-subtitle">An interactive Streamlit-powered recommender system for 32,000+ movies and TV shows.</p>
+                    
+                    <p class="modal-desc">This project is a content-based recommender that achieves 85% relevance using genre and language insights[cite: 160]. It utilizes cosine similarity on combined features (genre, cast, director, description) to generate smart recommendations. Performance is highly optimized by accelerating memory handling with Joblib, reducing the 7.6 GB matrix load times by 40%[cite: 161].</p>
+                    
+                    <h4 class="modal-heading">Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>Streamlit</span>
+                        <span>Joblib</span>
+                    </div>
+
+                    <div class="modal-info-grid">
+                        <div class="grid-column">
+                            <h4 class="modal-heading">Key Features</h4>
+                            <ul>
+                                <li>Content-based recommendations showing 5 similar titles.</li>
+                                <li>Filtering for Top 20 titles globally by language or genre.</li>
+                                <li>Interactive Streamlit dashboard with modular functions.</li>
+                                <li>Advanced data preprocessing and text normalization.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-column">
+                            <h4 class="modal-heading">Technical Workflow</h4>
+                            <ul>
+                                <li>Vectorized text using CountVectorizer.</li>
+                                <li>Calculated cosine similarity for content matching.</li>
+                                <li>Saved the massive 7.6 GB similarity matrix locally via Joblib.</li>
+                                <li>Handled missing source data without breaking the UI.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="modal-links">
+                        <h4 class="modal-heading">Links</h4>
+                        <div class="link-buttons">
+                            <a href="https://github.com/vandita-yadav/Netflix-TV-Shows-Content-Explorer" class="btn-github" target="_blank">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="credentials" class="credentials">
+            <div class="credentials-container">
+                <p class="section-subtitle">CONTINUOUS LEARNING</p>
+                <h2 class="section-title">Training, Certifications & Achievements</h2>
+
+                <div class="credentials-grid">
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Training</h3>
+                        <div class="cred-item">
+                            <h4>Trainee in AI & Machine Learning</h4>
+                            <p class="cred-org">CSE Pathshala | Jun - Jul 2025</p>
+                            <ul>
+                                <li>Mastered advanced Python for AI/ML, ML workflows, and data visualization.</li>
+                                <li>Improved model accuracy by up to 15% across end-to-end pipelines.</li>
+                            </ul>
+                            <a href="https://drive.google.com/file/d/1M3Jzu8gJBivcE_Bfr6OM2P6GX2A7JePN/view?usp=sharing" class="view-cert-link" target="_blank">View Certificate ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Certifications</h3>
+                        <ul class="cred-list">
+                            <li><a href="https://drive.google.com/drive/folders/133pZDW3qfOz-HGseCTohyz3OlmFlqVT2?usp=drive_link" target="_blank">Postman API Fundamentals Student Expert ↗</a><span class="cred-date">Aug 2025</span></li>
+                            <li><a href="https://drive.google.com/file/d/1f0cOXTze08pXaGIuUW77l4bKJwHIRZF8/view?usp=sharing" target="_blank">Summer of Quant Workshop Merit - IIT Kharagpur ↗</a><span class="cred-date">Sep 2024</span></li>
+                            <li><a href="https://www.skills.google/public_profiles/ec76d30f-4845-46c4-973c-841e95974dda" target="_blank">Prompt Design in Vertex AI - Google Cloud ↗</a><span class="cred-date">Jun 2024</span></li>
+                            <li><a href="https://drive.google.com/file/d/1JiWC20D_JozvDax6r4br_SzpTwEYs3KD/view?usp=sharing" target="_blank">Mastering 3D Modelling - Resolute Lab India ↗</a><span class="cred-date">May 2024</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="cred-card">
+                        <h3 class="cred-heading">Achievements</h3>
+                        <ul class="cred-list">
+                            <li><a href="https://www.skills.google/public_profiles/ec76d30f-4845-46c4-973c-841e95974dda" target="_blank">Google Cloud SkillBoost Badges (Gen AI & LLMs) ↗</a><span class="cred-date">Aug 2024</span></li>
+                            <li><a href="https://drive.google.com/drive/folders/1ZsZSZBtRGdcQ77Nwa-5kL_XeLPe3jTLm?usp=drive_link" target="_blank">HackerRank & HackerEarth Beginner Badges (Python, Java, DSA) ↗</a><span class="cred-date">Sep 2023</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<section id="education" class="education">
+            <div class="education-container">
+                <p class="section-subtitle">ACADEMIC BACKGROUND</p>
+                <h2 class="section-title">Education</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Aug 2023 - Present</span>
+                            <h3>Lovely Professional University</h3>
+                            <p class="timeline-degree">Bachelor of Technology - Computer Science and Engineering</p>
+                            <p class="timeline-grade">CGPA: 8.14</p>
+                            <p class="timeline-grade">Location: Phagwara, Punjab</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Apr 2021 - Mar 2022</span>
+                            <h3>Girls' High School & College</h3>
+                            <p class="timeline-degree">Intermediate (12th)</p>
+                            <p class="timeline-grade">Percentage: 78.9%</p>
+                            <p class="timeline-grade">Location: Prayagraj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Apr 2019 - Mar 2020</span>
+                            <h3>Girls' High School & College</h3>
+                            <p class="timeline-degree">Matriculation (10th)</p>
+                            <p class="timeline-grade">Percentage: 94.4%</p>
+                            <p class="timeline-grade">Location: Prayagraj, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
         <section id="contact" class="contact">
 
             <div class="contact-container">
@@ -122,49 +364,91 @@ index.html
                                 GitHub
                             </a>
                         </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <img src="assets/icons/map-pin.svg" alt="Location"> 
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Location: </span>
+                                <span>Prayagraj, Uttar Pradesh, India</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <img src="assets/icons/clock.svg" alt="Time">
+                            </div>
+                            <div class="info-details">
+                                <span class="info-label">Response Time: </span>
+                                <span>Within 24 hours</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
 
                 <!-- RIGHT SIDE -->
-
                 <div class="contact-right">
+                    <form class="contact-form" action="https://formspree.io/f/xdawqogr" method="POST">
+                        
+                        <div class="input-group half-width">
+                            <label>First Name <span>*</span></label>
+                            <input type="text" name="First Name" placeholder="First Name" required>
+                        </div>
 
-                    <label>First Name <span>*</span></label>
-                    <input type="text" required>
+                        <div class="input-group half-width">
+                            <label>Last Name <span>*</span></label>
+                            <input type="text" name="Last Name" placeholder="Last Name" required>
+                        </div>
 
-                    <label>Last Name <span>*</span></label>
-                    <input type="text" required>
+                        <div class="input-group full-width">
+                            <label>Email <span>*</span></label>
+                            <input type="email" name="email" placeholder="email@example.com" required>
+                        </div>
 
-                    <label>Email <span>*</span></label>
-                    <input type="email" required>
+                        <div class="input-group full-width">
+                            <label>Subject <span>*</span></label>
+                            <select name="Subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="Project Inquiry">Project Inquiry</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
 
-                    <label>Subject</label>
-                    <input type="text">
+                        <div class="input-group full-width">
+                            <label>Message <span>*</span></label>
+                            <textarea name="Message" placeholder="Tell me about your project or how I can help you..." required></textarea>
+                            <p class="form-tip">💡 Tip: Write a meaningful message with at least 3 words and 10 characters. Avoid random characters or excessive repetition.</p>
+                        </div>
 
-                    <label>Message <span>*</span></label>
-                    <textarea required></textarea>
-
-                    <button type="submit">
-                        Send Message
-                    </button>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        <p id="form-status" style="display: none; text-align: center; width: 100%; margin-top: 15px; font-weight: 600;"></p>
+                    </form>
                 </div>
+                
             </div>
         </section>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
         <script src="script.js"></script>
-        
+
+        <button id="scrollToTopBtn" class="scroll-top-btn" aria-label="Scroll to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <img src="assets/icons/go-up.svg" alt="Scroll to top" class="scroll-top-icon">
+        </button>
+
     </body>
 </html>
-________________________________________________________________________________________________________________________________________________________________________
 
 
-style.css
 
+style.css code
 html {
     scroll-behavior: smooth;
 }
@@ -410,27 +694,700 @@ body {
     box-shadow: 0 0 4px #4ade80;
 }
 
+/* =========================================
+ABOUT SECTION
+========================================= */
+
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 100px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+/* --- LEFT SIDE: TEXT & ANIMATION --- */
+
+.about-left {
+    width: 50%;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* The Appear-Drop Animation Keyframes */
+@keyframes appearDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Starts slightly higher */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Drops into resting position */
+    }
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+    
+    /* Just keep it invisible by default */
+    opacity: 0;
+}
+
+.section-title.animate-drop {
+    /* The animation only runs when this class is added */
+    animation: appearDrop 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.2s; /* Shortened the delay so it feels snappy when scrolling */
+}
+
+.highlight-name {
+    /* Gradient matching the reference image */
+    background: linear-gradient(90deg, #8b5cf6, #ec4899, #f97316, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* --- RIGHT SIDE: IMAGE CARD EFFECT --- */
+
+.about-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* The angled background card behind your image */
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #1e3a8a; /* Deep blue to match the reference */
+    border-radius: 24px;
+    transform: rotate(6deg) translate(15px, 15px);
+    z-index: 0;
+    transition: transform 0.4s ease;
+}
+
+/* Optional: Fun hover effect that spreads the cards apart */
+.image-wrapper:hover::before {
+    transform: rotate(10deg) translate(25px, 25px);
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    position: relative; /* Keeps the image above the blue background */
+    z-index: 1;
+    background-color: #2f2f2f; /* Acts as a solid base if your photo has a transparent background */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* --- ABOUT SKILLS SECTION --- */
+
+.about-skills {
+    margin-top: 40px;
+}
+
+.skills-title {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+    background: rgba(45, 212, 191, 0.1); /* Subtle teal background */
+    color: #2dd4bf; /* Teal text */
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 50px; /* Pill shape */
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: rgba(45, 212, 191, 0.2);
+    border-color: #2dd4bf;
+    transform: translateY(-2px);
+}
+
+* --- EXPERIENCE CARD --- */
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+    max-width: 1250px;
+}
+
+.experience-card:hover {
+    border-color: #2dd4bf;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.exp-header h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.exp-company {
+    font-size: 16px;
+    color: #2dd4bf;
+    font-weight: 500;
+}
+
+.exp-date {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.exp-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.exp-details li {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Custom bullet points for the list */
+.exp-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+    font-size: 18px;
+    top: -2px;
+}
+
+
+/* =========================================
+PROJECTS SECTION
+========================================= */
+.project-title {
+    .projects-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+}
+.projects {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.projects-container {
+    width: 100%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.projects-intro {
+    color: #9ca3af;
+    font-size: 20px;
+    margin-bottom: 40px; /* Adds space between the intro and the cards */
+}
+/* The Individual Project Cards */
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: #2dd4bf;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #f9fafb;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2dd4bf;
+}
+
+
+/* =========================================
+   PROJECT MODAL OVERLAY (The Pop-up)
+========================================= */
+
+/* The dark background behind the modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Dark dimming effect */
+    backdrop-filter: blur(8px); /* Blurs the website behind it */
+    z-index: 1000;
+    
+    /* Flex setup to center the modal box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* This class will be added by JavaScript to show the modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* The actual modal box */
+.modal-content {
+    background: #0a0a0a; /* Deep dark background */
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto; /* Adds a scrollbar if content is too long */
+    border-radius: 16px;
+    border: 1px solid #222;
+    padding: 50px;
+    
+    /* Slide up slightly when appearing */
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Modal Typography & Layout */
+.close-modal-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #ffffff;
+}
+
+.modal-title {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.modal-desc {
+    font-size: 15px;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.modal-heading {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+/* Tech Stack Pills inside Modal */
+.modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.modal-tech span {
+    padding: 6px 14px;
+    background: transparent;
+    color: #d1d5db;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* 2-Column Grid for Features & Workflow */
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.grid-column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Link Buttons */
+.link-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.link-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-github {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.btn-github:hover {
+    background: #222;
+}
+
+/* Custom Scrollbar for the modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* =========================================
+   CREDENTIALS SECTION (Training & Achievements)
+========================================= */
+
+.credentials {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.credentials-container {
+    width: 100%;
+    max-width: 1250px; /* Increased to make it more spacious */
+    margin: 0 auto;
+}
+
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cred-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.cred-card:hover {
+    border-color: #2dd4bf;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cred-heading {
+    font-size: 20px;
+    color: #2dd4bf;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.cred-item h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.cred-org {
+    color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.cred-item ul, .cred-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cred-item ul li, .cred-list li {
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Custom teal arrow bullets */
+.cred-item ul li::before, .cred-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+    font-size: 16px;
+    top: 0;
+}
+
+/* Styling the View Certificate Link */
+.view-cert-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #2dd4bf; /* Teal color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.view-cert-link:hover {
+    color: #14b8a6;
+    transform: translateX(4px); /* Slides slightly to the right on hover */
+}
+
+/* Styling the List Links (Certifications & Achievements) */
+.cred-list li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.cred-list li a:hover {
+    color: #2dd4bf; /* Text turns teal when hovered */
+}
+
+/* =========================================
+   EXPERIENCE & EDUCATION SECTIONS
+========================================= */
+
+.experience, .education {
+    width: 100%;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.experience-container, .education-container {
+    width: 100%;
+    max-width: 900px; /* Keeps the text from stretching too wide to read */
+    margin: 0 auto;
+}
+
+
+/* --- EDUCATION TIMELINE --- */
+
+.timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 35px;
+    border-left: 2px solid rgba(45, 212, 191, 0.2); /* The vertical line */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The glowing dot on the timeline */
+.timeline-dot {
+    position: absolute;
+    left: -42px; /* Pulls it perfectly onto the line */
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #2dd4bf;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(45, 212, 191, 0.4);
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: #2dd4bf;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.timeline-degree {
+    font-size: 15px;
+    color: #d1d5db;
+    margin-bottom: 12px;
+}
+
+.timeline-grade {
+    font-size: 14px;
+    color: #9ca3af;
+    font-style: italic;
+}
+
 /* CONTACT SECTION */
 
 .contact {
     width: 100%;
     min-height: 100vh;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
     padding: 40px 80px;
+
+    display: block;
 }
 
 .contact-container {
     width: 100%;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
 
     gap: 60px;
+}
+
+.contact-left,
+.contact-right {
+    margin-top: 40px;
 }
 
 
@@ -495,69 +1452,69 @@ body {
 
 
 /* RIGHT */
+/* RIGHT */
 
 .contact-right {
     width: 55%;
 }
 
 .contact-form {
-    background: #e5e5e5;
-
-    padding: 35px;
-
-    border-radius: 16px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
-
+    background: #ffffff; /* Crisp white card background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 
+    0 20px 40px rgba(0,0,0,0.5),
+    0 0 20px rgba(74,222,128,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
 }
 
-/* LABEL */
-
-/*.contact-form label {
-    font-size: 13px;
-    color: black;
-    font-weight: 600;
-    margin-top: 8px;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
+.half-width {
+    width: calc(50% - 10px);
+}
 
-.contact-form label span {
-    color: red;
-}*/
+.full-width {
+    width: 100%;
+}
 
 .contact-form label {
     font-size: 13px;
-    color: black;
+    color: #111827;
     font-weight: 600;
 }
 
 .contact-form label span {
-    color: red;
+    color: #e11d48; /* Red asterisk */
 }
 
-
-/* INPUT */
-
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     width: 100%;
-
     padding: 12px;
-
     border-radius: 8px;
-
-    border: none;
-
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
     font-size: 14px;
-
     box-sizing: border-box;
+    font-family: Inter, sans-serif;
+    color: #374151;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #4ade80; /* Green highlight when typing */
+    box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.2);
 }
 
 .contact-form textarea {
@@ -565,36 +1522,105 @@ body {
     resize: none;
 }
 
+.form-tip {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+}
 
-/* BUTTON */
-
-.contact-form button {
+.submit-btn {
+    width: 100%;
     margin-top: 10px;
-
-    background: #4ade80;
+    background: #2dd4bf; /* Matching the teal/green from your image */
+    color: white;
     border: none;
-
-    padding: 12px;
+    padding: 14px;
     border-radius: 8px;
-
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-
     transition: 0.3s;
 }
 
-.contact-form button:hover {
-    background: #22c55e;
+.submit-btn:hover {
+    background: #14b8a6;
 }
 
-________________________________________________________________________________________________________________________________________________________________________
+/* Styling for Project Dates */
+.project-date {
+    font-size: 12px;
+    color: #2dd4bf;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Styling for Credentials Dates */
+.cred-date {
+    display: block;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* =========================================
+   SCROLL TO TOP BUTTON
+========================================= */
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: #2dd4bf; /* Teal accent */
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.4);
+    z-index: 999; /* Keeps it on top of everything else */
+    
+    /* Hidden by default */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* JavaScript will add this class when you scroll down */
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: #14b8a6;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3); /* Creates a smooth, glowing border expansion */
+}
+
+.scroll-top-icon {
+    width: 24px;  /* Adjust this number if the icon feels too big or small */
+    height: 24px;
+    /* If your SVG is completely black and you ever want to change its color to white, you can use: filter: invert(1); */
+}
 
 
-script.js file
 
+script.js code
 let model;
 let baseY = 0;
-
+let targetRotationY = 0; // <-- Add this new line
 const container = document.getElementById("model-container");
 
 const scene = new THREE.Scene();
@@ -647,7 +1673,6 @@ const controls = new THREE.OrbitControls(
 controls.enableDamping = true;
 controls.enableZoom = false;
 
-
 // LOADER
 const loader = new THREE.GLTFLoader();
 
@@ -657,7 +1682,7 @@ loader.load(
 
         model = gltf.scene;
 
-        model.scale.set(1.5, 1.5, 1.5);
+        model.scale.set(1.8, 1.8, 1.8);
 
         // center model
         const box = new THREE.Box3().setFromObject(model);
@@ -667,6 +1692,21 @@ loader.load(
 
         baseY = -0.6;
         model.position.y = baseY;
+
+        // --- SMOOTH ROTATION LOGIC ---
+        // 1. Get the previous rotation count
+        let prevRotationCount = parseInt(localStorage.getItem("laptopRotations")) || 0;
+        let currentRotationCount = prevRotationCount + 1;
+        
+        // 2. Save the new count for next time
+        localStorage.setItem("laptopRotations", currentRotationCount);
+
+        // 3. Start the laptop at the previous angle
+        model.rotation.y = prevRotationCount * (Math.PI / 1.8);
+        
+        // 4. Set the target to the new angle (60 degrees further)
+        targetRotationY = currentRotationCount * (Math.PI / 1.8);
+        // -----------------------------
 
         scene.add(model);
     }
@@ -680,14 +1720,256 @@ function animate() {
 
     if (model) {
 
-        model.position.y =
-            baseY + Math.sin(Date.now() * 0.0012) * 0.35;
+        model.position.y = baseY + Math.sin(Date.now() * 0.0012) * 0.35;
+        model.rotation.y += (targetRotationY - model.rotation.y) * 0.033;
 
     }
 
     controls.update();
-
     renderer.render(scene, camera);
 }
 
 animate();
+
+// --- SCROLL ANIMATION LOGIC ---
+
+// 1. Create the lookout (Intersection Observer)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // If the element is visible on the screen...
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-drop');
+        }
+    });
+});
+
+// 2. Tell the lookout to watch ALL section titles, not just the first one
+const titlesToAnimate = document.querySelectorAll('.section-title');
+
+titlesToAnimate.forEach((title) => {
+    observer.observe(title);
+});
+
+
+// --- PROJECT MODAL LOGIC ---
+const modalOverlay = document.getElementById('project-modal');
+const closeModalBtn = document.querySelector('.close-modal-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+// 1. Our Project "Database"
+const projectData = {
+    'card-netflix': {
+        title: "Netflix & TV Shows Content Analyser",
+        subtitle: "An interactive Streamlit-powered recommender system for 32,000+ movies and TV shows.",
+        desc: "This project is a content-based recommender that achieves 85% relevance using genre and language insights. It utilizes cosine similarity on combined features (genre, cast, director, description) to generate smart recommendations. Performance is highly optimized by accelerating memory handling with Joblib, reducing the 7.6 GB matrix load times by 40%.",
+        tech: ["Python", "Pandas", "Scikit-learn", "Streamlit", "Joblib"],
+        features: [
+            "Content-based recommendations showing 5 similar titles.",
+            "Filtering for Top 20 titles globally by language or genre.",
+            "Interactive Streamlit dashboard with modular functions.",
+            "Advanced data preprocessing and text normalization."
+        ],
+        workflow: [
+            "Vectorized text using CountVectorizer.",
+            "Calculated cosine similarity for content matching.",
+            "Saved the massive 7.6 GB similarity matrix locally via Joblib.",
+            "Handled missing source data without breaking the UI."
+        ],
+        links: `<a href="https://github.com/vandita-yadav/Netflix-TV-Shows-Content-Explorer" class="btn-github" target="_blank">GitHub ↗</a>`
+    },
+    'card-metro': {
+        title: "Metro Lens | Operations Intelligence",
+        subtitle: "A scalable Power BI analytics dashboard for metro ridership data.",
+        desc: "Modeled 65,700+ metro records into a robust star-schema to enable scalable analytics. This intelligence dashboard quantifies ridership and congestion patterns, successfully identifying 3-4x times station load variations and revealing a 40% peak-hour dominance.",
+        tech: ["Power BI", "Power Query", "DAX"],
+        features: [
+            "Interactive visualizations of ridership trends.",
+            "Identification of high-density stations and peak intervals.",
+            "Scalable analytics handling 65,700+ records.",
+            "Actionable insights into congestion patterns."
+        ],
+        workflow: [
+            "Data modeling into a star-schema.",
+            "Created 12 custom DAX measures for deep analytics.",
+            "Data transformation using Power Query.",
+            "Dashboard design and deployment."
+        ],
+        links: `
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ5ZGI4YTYtZGMwOC00MzA4LWI5NjAtZmI3YzlmZTQ0NmY1IiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D&pageName=d5fb8dec6735a7466c53" class="btn-live" target="_blank">Live Dashboard ↗</a>
+        `
+    },
+    'card-fraud': {
+        title: "Credit Card Fraud Prediction",
+        subtitle: "Real-time machine learning fraud detection dashboard.",
+        desc: "Developed a decision tree-based fraud detection model achieving 92% accuracy while reducing false positives by 12%. The model is deployed via a Streamlit dashboard that provides real-time predictions, processing over 280,000 records and cutting evaluation time by 60%.",
+        tech: ["Python", "Pandas", "Scikit-learn", "Streamlit"],
+        features: [
+            "Real-time fraud prediction processing.",
+            "High-accuracy (92%) decision tree model.",
+            "Significant 12% reduction in false positive rates.",
+            "Interactive interface cutting evaluation time by 60%."
+        ],
+        workflow: [
+            "Processed dataset of 280,000+ records.",
+            "Trained and evaluated Decision Tree algorithms.",
+            "Optimized model to minimize false positives.",
+            "Deployed interactive UI using Streamlit."
+        ],
+        links: `<a href="https://github.com/vandita-yadav/Credit-Card-Fraud-Prediction" class="btn-github" target="_blank">GitHub ↗</a>`
+    }
+};
+
+// 2. Function to inject data into the modal
+function populateModal(cardId) {
+    const data = projectData[cardId];
+    if (!data) return;
+
+    // Inject text
+    document.querySelector('.modal-title').textContent = data.title;
+    document.querySelector('.modal-subtitle').textContent = data.subtitle;
+    document.querySelector('.modal-desc').textContent = data.desc;
+
+    // Inject tech stack pills
+    const techContainer = document.querySelector('.modal-tech');
+    techContainer.innerHTML = data.tech.map(tech => `<span>${tech}</span>`).join('');
+
+    // Inject features list
+    const featuresList = document.querySelectorAll('.grid-column ul')[0];
+    featuresList.innerHTML = data.features.map(feat => `<li>${feat}</li>`).join('');
+
+    // Inject workflow list
+    const workflowList = document.querySelectorAll('.grid-column ul')[1];
+    workflowList.innerHTML = data.workflow.map(work => `<li>${work}</li>`).join('');
+
+    // Inject links (Live/GitHub)
+    document.querySelector('.link-buttons').innerHTML = data.links;
+}
+
+// 3. Open Modal Events
+if (modalOverlay && closeModalBtn && projectCards.length > 0) {
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            populateModal(card.id); // Load the correct data!
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// --- SCROLL TO TOP BUTTON LOGIC ---
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+if (scrollToTopBtn) {
+    // 1. Show button when scrolled down 300px from the top
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    // 2. Smooth scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// --- CLEAN URL SMOOTH SCROLLING ---
+// Find every link on the page that starts with a "#" (your navigation links)
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // 1. Stop the default behavior (This prevents the '#' from adding to the URL!)
+        e.preventDefault();
+        
+        // 2. Get the exact word after the '#' (like "projects" or "experience")
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        // 3. If that section exists, glide smoothly to it
+        if (targetSection) {
+            window.scrollTo({
+                // The - 50 gives a little breathing room at the top so the header doesn't cover the title
+                top: targetSection.offsetTop - 50, 
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// --- CONTACT FORM SUBMISSION LOGIC ---
+
+/*const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async function(e) {
+        // 1. Stop the browser from redirecting to Formspree
+        e.preventDefault(); 
+
+        // 2. Gather the data from the form
+        const formData = new FormData(contactForm);
+        const endpoint = contactForm.getAttribute("action");
+
+        // 3. Show a loading state (optional but good for UX)
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+            // 4. Send the data to Formspree quietly in the background
+            const response = await fetch(endpoint, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success! Show green message and clear the form
+                formStatus.innerText = "Message successfully sent!";
+                formStatus.style.color = "#4ade80"; // Green
+                formStatus.style.display = "block";
+                contactForm.reset();
+            } else {
+                // Formspree returned an error (e.g., missing field)
+                formStatus.innerText = "Oops! There was a problem sending your message.";
+                formStatus.style.color = "#e11d48"; // Red
+                formStatus.style.display = "block";
+            }
+        } catch (error) {
+            // Network error
+            formStatus.innerText = "Network error. Please try again later.";
+            formStatus.style.color = "#e11d48"; // Red
+            formStatus.style.display = "block";
+        } finally {
+            // Reset button state
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Hide the status message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = "none";
+            }, 5000);
+        }
+    });
+}*/

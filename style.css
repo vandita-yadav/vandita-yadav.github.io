@@ -404,7 +404,7 @@ ABOUT SECTION
     transform: translateY(-2px);
 }
 
-* --- EXPERIENCE CARD --- */
+/* --- EXPERIENCE CARD --- */
 
 .experience-card {
     background: rgba(255, 255, 255, 0.03);
@@ -479,13 +479,12 @@ ABOUT SECTION
 PROJECTS SECTION
 ========================================= */
 .project-title {
-    .projects-title {
     font-size: 48px;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 15px;
 }
-}
+
 .projects {
     width: 100%;
     padding: 100px 80px;
@@ -1162,4 +1161,75 @@ PROJECTS SECTION
     width: 24px;  /* Adjust this number if the icon feels too big or small */
     height: 24px;
     /* If your SVG is completely black and you ever want to change its color to white, you can use: filter: invert(1); */
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Screens under 768px)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Shrink heavy padding on all sections */
+    .navbar, .homepage, .about, .projects, .credentials, .experience, .education, .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 2. Fix the Navigation Bar */
+    .navbar {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    /* 3. Stack the Homepage / Hero Section */
+    .homepage {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+    .homepage-left, .homepage-right {
+        width: 100%;
+    }
+    .homepage-left h1 {
+        font-size: 40px; /* Shrink massive text */
+    }
+    .availability, .homepage-buttons {
+        justify-content: center; /* Center buttons and status */
+    }
+    .homepage-right {
+        height: 400px; /* Give the 3D laptop space to render */
+        margin-top: 40px;
+    }
+
+    /* 4. Stack About & Contact 50/50 Columns */
+    .about-container, .contact-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .about-left, .about-right, .contact-left, .contact-right {
+        width: 100%;
+    }
+
+    /* 5. Fix the Contact Form Inputs */
+    .half-width {
+        width: 100%; /* Makes first/last name stack instead of squishing */
+    }
+
+    /* 6. General Typography & Spacing Fixes */
+    .section-title, .projects-title {
+        font-size: 32px;
+    }
+    .timeline {
+        padding-left: 20px; /* Keep timeline dots on screen */
+    }
 }
