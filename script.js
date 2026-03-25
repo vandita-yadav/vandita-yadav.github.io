@@ -99,17 +99,16 @@ loader.load(
     }
 );
 
-
 // ANIMATION
 function animate() {
-
     requestAnimationFrame(animate);
-
+    
     if (model) {
-
+        // 1. The smooth up-and-down floating (bobbing)
         model.position.y = baseY + Math.sin(Date.now() * 0.0012) * 0.35;
-        model.rotation.y += (targetRotationY - model.rotation.y) * 0.033;
-
+        
+        // 2. The continuous pro-spin! (Change 0.005 to make it faster or slower)
+        model.rotation.y += 0.005; 
     }
 
     controls.update();
