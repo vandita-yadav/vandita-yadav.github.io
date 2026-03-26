@@ -137,7 +137,46 @@ const closeModalBtn = document.querySelector('.close-modal-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
 // 1. Our Project "Database"
+// 1. Our Project "Database" (Updated with LifeLine++ and Portfolio)
 const projectData = {
+    'card-lifeline': {
+        title: "LifeLine++ | AI Emergency Response",
+        subtitle: "AI-Integrated system for real-time crisis coordination and resource management.",
+        desc: "LifeLine++ is a sophisticated emergency management platform designed to bridge the gap between victims and first responders. It utilizes predictive analytics to optimize resource allocation and provides a real-time communication layer for crisis teams.",
+        tech: ["Python", "Machine Learning", "Predictive Analytics", "Real-time APIs"],
+        features: [
+            "Predictive modeling for crisis resource optimization.",
+            "Real-time coordination dashboard for emergency teams.",
+            "Scalable architecture for high-concurrency data processing.",
+            "Automated incident categorization using NLP."
+        ],
+        workflow: [
+            "Ingested real-time crisis data via multiple API endpoints.",
+            "Applied predictive models to forecast resource needs.",
+            "Streamlined coordination logic for faster response times.",
+            "Ongoing development focused on system resilience."
+        ],
+        links: `<a href="#" class="btn-github">Ongoing</a>`
+    },
+    'card-portfolio': {
+        title: "Dev Portfolio",
+        subtitle: "A high-performance personal brand site built with modern 3D rendering.",
+        desc: "This portfolio was engineered to move beyond standard templates. It features a custom WebGL environment and a bespoke design system that prioritizes technical depth and visual micro-interactions.",
+        tech: ["Three.js (WebGL)", "JavaScript (ES6+)", "HTML5 / CSS3", "Git"],
+        features: [
+            "Integrated interactive 3D laptop model with Three.js.",
+            "Custom glassmorphism design system.",
+            "Fully responsive layout with mobile-specific 3D optimizations.",
+            "High-contrast typography for professional accessibility."
+        ],
+        workflow: [
+            "Developed custom GLB loading and animation logic.",
+            "Optimized CSS animations for 60FPS performance.",
+            "Implemented dynamic modal content swapping via JS.",
+            "Refined camera positioning for multi-device compatibility."
+        ],
+        links: `<a href="https://github.com/vandita-yadav/vandita-yadav.github.io" class="btn-github" target="_blank">GitHub ↗</a>`
+    },
     'card-netflix': {
         title: "Netflix & TV Shows Content Analyser",
         subtitle: "An interactive Streamlit-powered recommender system for 32,000+ movies and TV shows.",
@@ -174,9 +213,7 @@ const projectData = {
             "Data transformation using Power Query.",
             "Dashboard design and deployment."
         ],
-        links: `
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ5ZGI4YTYtZGMwOC00MzA4LWI5NjAtZmI3YzlmZTQ0NmY1IiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D&pageName=d5fb8dec6735a7466c53" class="btn-live" target="_blank">Live Dashboard ↗</a>
-        `
+        links: `<a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ5ZGI4YTYtZGMwOC00MzA4LWI5NjAtZmI3YzlmZTQ0NmY1IiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D" class="btn-live" target="_blank">Live Dashboard ↗</a>`
     },
     'card-fraud': {
         title: "Credit Card Fraud Prediction",
@@ -198,30 +235,26 @@ const projectData = {
         links: `<a href="https://github.com/vandita-yadav/Credit-Card-Fraud-Prediction" class="btn-github" target="_blank">GitHub ↗</a>`
     }
 };
-
 // 2. Function to inject data into the modal
 function populateModal(cardId) {
     const data = projectData[cardId];
     if (!data) return;
 
-    // Inject text
+    // 1. Inject Basic Text
     document.querySelector('.modal-title').textContent = data.title;
     document.querySelector('.modal-subtitle').textContent = data.subtitle;
     document.querySelector('.modal-desc').textContent = data.desc;
 
-    // Inject tech stack pills
+    // 2. Inject Tech Pills
     const techContainer = document.querySelector('.modal-tech');
     techContainer.innerHTML = data.tech.map(tech => `<span>${tech}</span>`).join('');
 
-    // Inject features list
-    const featuresList = document.querySelectorAll('.grid-column ul')[0];
-    featuresList.innerHTML = data.features.map(feat => `<li>${feat}</li>`).join('');
+    // 3. Inject Lists
+    const lists = document.querySelectorAll('.grid-column ul');
+    lists[0].innerHTML = data.features.map(feat => `<li>${feat}</li>`).join('');
+    lists[1].innerHTML = data.workflow.map(work => `<li>${work}</li>`).join('');
 
-    // Inject workflow list
-    const workflowList = document.querySelectorAll('.grid-column ul')[1];
-    workflowList.innerHTML = data.workflow.map(work => `<li>${work}</li>`).join('');
-
-    // Inject links (Live/GitHub)
+    // 4. Inject Links
     document.querySelector('.link-buttons').innerHTML = data.links;
 }
 
